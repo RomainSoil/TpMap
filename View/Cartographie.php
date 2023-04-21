@@ -25,15 +25,19 @@ if (isset($_GET['ville'])) {
 
     // Rechercher les coordonnées géographiques de la ville avec l'API Nominatim d'OpenStreetMap
     $url = "https://nominatim.openstreetmap.org/search?q=".urlencode($ville)."&format=json";
-    $data = file_get_contents($url);
-    $json = json_decode($data, true);
+    $data = @file_get_contents($url);
 
-    if (!empty($json)) {
-        $lat = $json[0]['lat'];
-        $lon = $json[0]['lon'];
+    if ($data !== false) {
+        $json = json_decode($data, true);
 
+        if (!empty($json)) {
+            $lat = $json[0]['lat'];
+            $lon = $json[0]['lon'];
+        } else {
+            echo '<p>Aucun résultat trouvé pour "'.$ville.'".</p>';
+        }
     } else {
-        echo '<p>Aucun résultat trouvé pour "'.$ville.'".</p>';
+        echo '<p>Une erreur s\'est produite lors de la recherche de la ville "'.$ville.'". Veuillez réessayer plus tard.</p>';
     }
 }
 ?>
