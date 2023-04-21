@@ -1,49 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OpenStreetMap avec PHP</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" type="text/css">
-    <style>
+    <title>Recherche de ville avec OpenStreetMap</title>
+    <meta charset="utf-8">
+    <style type="text/css">
         #map {
-            height: 720px;
+            width: 800px;
+            height: 600px;
         }
     </style>
 </head>
 <body>
-<div id="map"></div>
-<script>
-    var lat = 48.858093;
-    var lon = 2.294694;
-    var map = new ol.Map({
-        target: 'map',
-        layers: [
-            new ol.layer.Tile({
-                source: new ol.source.OSM()
-            })
-        ],
-        view: new ol.View({
-            center: ol.proj.fromLonLat([lon, lat]),
-            zoom: 13
-        })
-    });
-    var marker = new ol.Feature({
-        geometry: new ol.geom.Point(
-            ol.proj.fromLonLat([lon, lat])
-        )
-    });
-    var markerVectorLayer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            features: [marker]
-        }),
-        style: new ol.style.Style({
-            image: new ol.style.Icon({
-                anchor: [0.5, 1],
-                src: 'https://openlayers.org/en/v4.6.5/examples/data/icon.png'
-            })
-        })
-    });
-    map.addLayer(markerVectorLayer);
-</script>
+<h1>Recherche de ville avec OpenStreetMap</h1>
+<form action="" method="get">
+    <label for="ville">Ville :</label>
+    <input type="text" name="ville" id="ville" required>
+    <input type="submit" value="Rechercher">
+</form>
+
+<?php
+if (isset($_GET['ville'])) {
+    // Récupérer le nom de la ville
+    $ville = $_GET['ville'];
+
+    // Rechercher les coordonnées géographiques de la ville avec l'API Nominatim d'OpenStreetMap
+    $url = "https://nominatim.openstreetmap.org/search?q=".urlencode($ville)."&format=json";
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+
+    if (!empty($json)) {
+        $lat = $json[0]['lat'];
+        $lon = $json[0]['lon'];
+
+    } else {
+        echo '<p>Aucun résultat trouvé pour "'.$ville.'".</p>';
+    }
+}
+?>
 </body>
 </html>
