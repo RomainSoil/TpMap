@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" type="text/css">
     <style>
         #map {
-            height: 800px;
+            height: 720px;
         }
     </style>
 </head>
