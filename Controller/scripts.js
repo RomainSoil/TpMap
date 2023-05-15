@@ -22,14 +22,14 @@ window.onload = function(){
         // Nous personnalisons la langue et le moyen de transport
         router: new L.Routing.osrmv1({
             language: 'fr',
+            profile: 'bike' // Ajoutez ici le moyen de transport souhaité ('car', 'bike', 'foot', etc.)
         }),
 
         geocoder: L.Control.Geocoder.nominatim(),
 
-        // show: true, //Définit si l'outil de routage doit être affiché par défaut sur la carte.
+        show: true, //Définit si l'outil de routage doit être affiché par défaut sur la carte.
         routeWhileDragging: true, //Définit si le routage doit être mis à jour en temps réel pendant le glissement de l'itinéraire.
         fitSelectedRoutes: true, // Définit si la carte doit s'ajuster automatiquement pour afficher l'itinéraire sélectionné.
-        showAlternatives: true, // Définit si les itinéraires alternatifs doivent être affichés en plus de l'itinéraire principal.
         showStepMarkers: true, //Définit si les marqueurs d'étape doivent être affichés le long de l'itinéraire.
 
     }).addTo(macarte);

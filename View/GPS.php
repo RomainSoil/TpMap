@@ -4,7 +4,7 @@
      <meta charset "UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"›
-</head>
+ </head>
  <body class="bg-gray-200">
     <div class="flex items-center flex-col space-y-20 justify-center h-screen bg-gray-200 sm:px-6">
         <div class="w-full max-w-sm p-4 bg-white rounded-m shadow-md sm:p-6">
