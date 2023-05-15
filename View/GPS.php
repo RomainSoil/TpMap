@@ -27,7 +27,7 @@
                         <option value="" disabled selected>Choisir un mode de transport</option>
                         <option value="d">Voiture</option>
                         <option value="b">Vélo</option>
-                        <option value="w">Marche</option>
+                        <option value="w">A pied</option>
                         <option value="r">Transport en commun</option>
                     </select>
                     </label>
@@ -46,7 +46,7 @@
 
 
             ?>
-            <iframe src="https://maps.google.com/maps?&saddr=<?php echo $addressGPS; ?>&daddr=<?php echo $addressArrive;?>&dirflg=<?php echo $mode;?>&output=embed"
+            <iframe src="https://maps.google.com/maps?&saddr=<?php echo $addressGPS; ?>&daddr=<?php echo $addressArrive;?>&t=k&dirflg=<?php echo $mode;?>&output=embed"
                 width="100%" height="500"></iframe>
         <?php }?>
 </body> </html>
