@@ -37,7 +37,7 @@
 $url = "https://maps.googleapis.com/maps/api/directions/json?origin=$origin&destination=$destination&mode=$mode&key=YOUR_API_KEY";
 
 // envoyer une requête HTTP pour récupérer les données de l'itinéraire
-@$response = file_get_contents($url);
+$response = file_get_contents($url);
 
 // décoder les données JSON de la réponse
 $data = json_decode($response);
