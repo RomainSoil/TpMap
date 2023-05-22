@@ -1,3 +1,5 @@
+<!-- test avec googleAPi mais il faut une cle d'API, qui est payante comme pour google MAP -->
+
 <html>
 <body>
 <form method="post">

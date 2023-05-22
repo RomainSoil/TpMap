@@ -1,3 +1,7 @@
+<!-- Impossible de gerer les moyens de transport
+    -->
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,6 +10,17 @@
     <title>Document</title>
 
     <!-- Fichiers CSS -->
+
+    <!-- Bibliotheque OpenStreetMap
+
+     Leaflet pour integration carte
+     nominatim pour recherche par adresse
+     Leaflet Routing machine pour l'itineraire
+     et Geocoder qui fait le lien entre nominatim et Leaflet Routing Machine
+
+
+     -->
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
 
     <!-- Ces deux balises link sont à insérer entre les deux balises existantes -->

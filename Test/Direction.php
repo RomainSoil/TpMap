@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+/* test avec API OSRM qui nous donne les rues a prendre
+selon deux coordonnees ainsi que la distance et la duree du trajet*/
+
+
 // Coordonnées des points de départ et d'arrivée
 $depart = "2.3483915,48.8534951";
 $arrivee = "3.2346145,50.1757546";

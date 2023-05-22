@@ -1,3 +1,9 @@
+<!-- Juste route, moyen de locomotion et duree entre deux villes
+
+pas de lieux de passage ni itineraire car il faudrait une cle API malheureusement payante avec GoogleMaps
+
+    -->
+
 <DOCTYPE html>
     <html lang= "en">
  <head>
@@ -36,17 +42,5 @@
                             class="w-full px-4 py-2 text-sm text-center text-white bg-indigo-600 rounded-md hover:bg-indigo-500">Générer </div>
 </form>
 </div>
-        <?php
-        if (isset($_POST["submit"])){
-            $address = $_POST["address"];
-            $arrivee = $_POST["arrive"];
-            $addressGPS = str_replace(" ","+",$address);
-            $addressArrive = str_replace(" ","+",$arrivee);
-            $mode = $_POST['mode_transport'];
 
-
-            ?>
-            <iframe src="https://maps.google.com/maps?&saddr=<?php echo $addressGPS; ?>&daddr=<?php echo $addressArrive;?>&t=k&dirflg=<?php echo $mode;?>&output=embed"
-                width="100%" height="500"></iframe>
-        <?php }?>
 </body> </html>

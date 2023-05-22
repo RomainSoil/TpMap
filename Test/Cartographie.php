@@ -1,5 +1,7 @@
 <?php
 session_start()
+
+/* test avec OpenStreetMap pour recuperer les coordonnes de latitude et longitude en rentrant un nom de ville*/
 ?>
 
 <!DOCTYPE html>

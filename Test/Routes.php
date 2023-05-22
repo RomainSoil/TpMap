@@ -1,4 +1,7 @@
 <?php
+
+/* test avec google map API mais il faut une cle d'API, qui est payante  */
+
 // Récupération des villes de départ et d'arrivée
 $ville_depart = $_POST['ville_depart'];
 $ville_arrivee = $_POST['ville_arrivee'];
